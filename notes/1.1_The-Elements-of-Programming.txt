@@ -5,4 +5,16 @@ Applicative order evaluation vs normal order evaluation
 They will yield the same result when procedure applications 
 can be modeled using substitution and that yield legitimate values.
 
+Local Names
+-----------
+    Bound variable: a name given to a formal parameter 
+                    that does not necessarily have the
+                    same name as in the definition
+    Bind(verb): the action of taking variables used with 
+    '           the procedure and associating them to 
+                the formal parameters.
+    free(variable): not bound
+
+    scope: the set of expressions for which a binding 
+            defines a name
 
