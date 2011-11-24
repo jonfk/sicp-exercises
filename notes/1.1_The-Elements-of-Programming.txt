@@ -1,0 +1,8 @@
+Applicative order evaluation vs normal order evaluation
+-------------------------------------------------------
+    Normal order: "Fully expand and then reduce"
+    Applicative-order: "Evaluate the arguments then apply"
+They will yield the same result when procedure applications 
+can be modeled using substitution and that yield legitimate values.
+
+
