@@ -46,3 +46,25 @@
 ;; (Ack 0 n) = 2n
 ;; (Ack 1 n) = 2^n
 ;; (Ack 2 n) = 2^2^...(ntimes)
+
+;; exercise 1.11
+;; f(n) = n if n<3
+;; and f(n) = f(n-1)+2f(n-2)+3f(n-3) if n >=3
+(define (f n)
+  (if (< n 3)
+      n
+      (+ (f (- n 1))
+         (* 2 (f (- n 2)))
+         (* 3 (f (- n 3))))))
+(define (f-iter n)
+  (define (iter a b c n)
+    ;; a = f(n-1), b = f(n-2), c = f(n-3)
+    ;; return a+2b+3c
+    (if (< n 3)
+        a
+        (iter (+ a (* b 2) (* c 3)) a b (- n 1))))
+  (iter 2 1 0 n))
+
+;; exercise 1.12
+(define (pascal row col)
+  (cond 
