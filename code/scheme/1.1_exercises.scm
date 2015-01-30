@@ -1,4 +1,4 @@
-;; sicp P60 
+;; sicp P60
 ;; exercise 1.6
 (include "sqrt-iter.scm")
 
@@ -9,7 +9,7 @@
 (define (new-sqrt-iter guess x)
   (new-if (good-enough? guess x)
           guess
-          (new-sqrt-iter (improve guess x) 
+          (new-sqrt-iter (improve guess x)
                          x)))
 
 ;; This does not work because the interpreter uses applicative order application
@@ -17,7 +17,7 @@
 ;; if uses a special form because it uses normal order application.
 
 ;; exercise 1.7
-;; For very small numbers the tolerance value for good-enough? is too large 
+;; For very small numbers the tolerance value for good-enough? is too large
 ;; and will produce significant differences.
 ;; For very large numbers, since they are represented with limited precision
 ;; a small value such as 0.001 will not be determined and therefore the program
@@ -34,7 +34,7 @@
       guess
       (cube-rt-iter (improve-cube guess x) x)))
 (define (good-enough-cube? guess x)
-  (< (abs (- (* guess guess guess) x)) 
+  (< (abs (- (* guess guess guess) x))
      (abs (* guess guess 0.001))))
 (define (improve-cube guess x)
   (/ (+ (* 2 guess)
@@ -42,4 +42,3 @@
      3))
 (define (my-cube-rt x)
   (cube-rt-iter 1.0 x))
-
